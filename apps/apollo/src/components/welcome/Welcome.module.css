@@ -1,0 +1,13 @@
+.title {
+  color: #329af0;
+  font-size: rem(20px);
+  font-weight: 900;
+  letter-spacing: rem(-2px);
+}
+
+.item {
+  border: 2px solid rgb(95 97 110);
+  border-radius: 0.5em;
+  padding: 20px;
+  width: 10em;
+}

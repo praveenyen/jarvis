@@ -1,0 +1,22 @@
+$light-color: red;
+$width: 100px;
+/*.sample {
+  background-color: var(--mantine-color-primary-5);
+}*/
+/*@mixin important-text {
+  background-color:   lighten(var(--mantine-color-red-4), 0.5);
+
+  font-size: 8px;
+  font-weight: bold;
+  border: 1px solid blue;
+}*/
+.sample {
+  /*background-color:   lighten(var(--mantine-color-primary-5), 0.5);*/
+  background-color: var(--mantine-color-primary-5);
+  @mixin hover {
+    color: $light-color;
+  }
+  /*@include important-text;*/
+}
+
+@custom-selector :--heading h1, h2, h3;

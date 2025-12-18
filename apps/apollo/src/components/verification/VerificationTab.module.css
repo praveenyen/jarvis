@@ -1,0 +1,6 @@
+.editButton {
+  &:disabled,
+  &[data-disabled] {
+    background-color: white;
+  }
+}

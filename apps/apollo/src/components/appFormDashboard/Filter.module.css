@@ -1,0 +1,16 @@
+.filtersContainer {
+  display: flex;
+  width: 100%;
+  gap: 0px;
+}
+.otherContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+
+.calanderDateRangeInput {
+  width: 100%;
+}

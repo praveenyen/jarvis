@@ -1,0 +1,31 @@
+.discrepancy-button-container {
+    position: fixed;
+    right: 140px;
+    bottom: 50px;
+    z-index: 10;
+  }
+
+  .discrepancy-container {
+    z-index:250;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    height:95vh;
+    width: 420px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--light-gray, #d9d9d9);
+
+  }
+
+  .discrepancy-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffff;
+    border-radius: 8px 8px 0px 0px;
+    padding: 0px 24px 0px 20px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 700;
+  }

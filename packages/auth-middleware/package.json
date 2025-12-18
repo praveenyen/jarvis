@@ -1,0 +1,26 @@
+{
+  "name": "@repo/auth-middleware",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "next": "^15.0.0",
+    "typescript": "5.7.3"
+  },
+  "peerDependencies": {
+    "next": "^15.0.0",
+    "aws-amplify": "^6.0.0"
+  }
+}

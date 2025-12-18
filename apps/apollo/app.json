@@ -1,0 +1,15 @@
+{
+    "apps": [
+        {
+            "name": "Apollo",
+            "instances": 1,
+            "exec_mode": "cluster",
+            "script": "yarn",
+            "args": "start",
+            "env": {
+                "NODE_ENV": "production",
+                "PORT": "3000"
+            }
+        }
+    ]
+}
