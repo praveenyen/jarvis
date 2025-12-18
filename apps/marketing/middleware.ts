@@ -1,7 +1,24 @@
-import { createAuthMiddleware } from '@repo/auth-middleware';
-import { cookies } from 'next/headers';
-import { fetchAuthSession } from 'aws-amplify/auth/server';
-import { runWithAmplifyServerContext } from '@/auth/configureAmplifyServerSide';
+import { createAuthMiddleware, createAuthConfig } from '@repo/auth-middleware';
+import { initializeAmplifyServer, checkAuthentication } from '@repo/auth-middleware/server';
+
+// Initialize Amplify server with auth configuration
+initializeAmplifyServer(
+  createAuthConfig({
+    userPoolId: String(process.env.NEXT_PUBLIC_USER_POOL_ID),
+    userPoolClientId: String(process.env.NEXT_PUBLIC_USER_POOL_CLIENT_ID),
+    cognitoDomain: String(process.env.NEXT_PUBLIC_COGNITO_DOMAIN),
+    redirectSignInUrls: [
+      String(process.env.NEXT_PUBLIC_REDIRECT_SIGN_IN_URL_LOCAL),
+      String(process.env.NEXT_PUBLIC_REDIRECT_SIGN_IN_URL),
+    ],
+    redirectSignOutUrls: [
+      String(process.env.NEXT_PUBLIC_REDIRECT_SIGN_OUT_URL_LOCAL),
+      String(process.env.NEXT_PUBLIC_REDIRECT_SIGN_OUT_URL),
+    ],
+    oAuthScopes: ['phone', 'email', 'profile', 'openid'],
+    providers: ['Google'],
+  })
+);
 
 export const config = {
   /*
@@ -10,27 +27,9 @@ export const config = {
   matcher: ['/((?!_next/static|_next/image|.*\\.png$|api/).*)'],
 };
 
-async function checkAuthentication(): Promise<boolean> {
-  return runWithAmplifyServerContext({
-    nextServerContext: { cookies },
-    operation: async (contextSpec) => {
-      try {
-        const session = await fetchAuthSession(contextSpec);
-        return (
-          session.tokens?.accessToken !== undefined &&
-          session.tokens?.idToken !== undefined
-        );
-      } catch (error) {
-        console.log(error);
-        return false;
-      }
-    },
-  });
-}
-
 // Configure which routes require authentication
 export const middleware = createAuthMiddleware({
   privateRoutes: ['/dashboard'],
   loginRedirectPath: '/login',
-  authCheckFn: checkAuthentication,
+  checkAuthFn: checkAuthentication,
 });

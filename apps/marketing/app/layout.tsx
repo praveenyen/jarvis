@@ -7,8 +7,8 @@ import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toolbar } from './client-scripts';
+import { AmplifyClientProvider } from './amplify-client-provider';
 
-import ConfigureAmplifyClientSide from '@/auth/ConfigureAmplifyClientSide';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,10 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ConfigureAmplifyClientSide />
-        <PrefetchCrossZoneLinksProvider>
-          {children}
-        </PrefetchCrossZoneLinksProvider>
+        <AmplifyClientProvider>
+          <PrefetchCrossZoneLinksProvider>
+            {children}
+          </PrefetchCrossZoneLinksProvider>
+        </AmplifyClientProvider>
         <PrefetchCrossZoneLinks />
         <SpeedInsights />
         <Analytics />

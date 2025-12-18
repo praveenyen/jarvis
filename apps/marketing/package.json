@@ -11,14 +11,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@aws-amplify/adapter-nextjs": "^1.3.0",
     "@radix-ui/react-slot": "^1.1.1",
     "@repo/auth-middleware": "workspace:*",
     "@vercel/analytics": "^1.5.0",
     "@vercel/microfrontends": "1.2.4",
     "@vercel/speed-insights": "^1.2.0",
     "@vercel/toolbar": "0.1.36",
-    "aws-amplify": "^6.10.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "flags": "^3.2.0",

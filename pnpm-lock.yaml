@@ -34,7 +34,7 @@ importers:
     dependencies:
       '@aws-amplify/adapter-nextjs':
         specifier: ^1.3.0
-        version: 1.6.12(aws-amplify@6.15.9)(next@16.0.10(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
+        version: 1.6.12(aws-amplify@6.15.9)(next@16.0.10(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
       '@aws-amplify/backend':
         specifier: ^1.13.0
         version: 1.19.0(@aws-sdk/client-cloudformation@3.954.0)(@aws-sdk/client-s3@3.954.0)(@aws-sdk/types@3.953.0)(zod@3.25.17)
@@ -268,9 +268,6 @@ importers:
 
   apps/marketing:
     dependencies:
-      '@aws-amplify/adapter-nextjs':
-        specifier: ^1.3.0
-        version: 1.6.12(aws-amplify@6.15.9)(next@16.0.10(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
       '@radix-ui/react-slot':
         specifier: ^1.1.1
         version: 1.2.3(@types/react@19.2.7)(react@19.2.3)
@@ -289,9 +286,6 @@ importers:
       '@vercel/toolbar':
         specifier: 0.1.36
         version: 0.1.36(@vercel/analytics@1.5.0(next@16.0.10(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@vercel/speed-insights@1.2.0(next@16.0.10(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(next@16.0.10(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      aws-amplify:
-        specifier: ^6.10.3
-        version: 6.15.9
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -431,6 +425,13 @@ importers:
         version: 5.7.3
 
   packages/auth-middleware:
+    dependencies:
+      '@aws-amplify/adapter-nextjs':
+        specifier: ^1.3.0
+        version: 1.6.12(aws-amplify@6.15.9)(next@15.5.9(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
+      aws-amplify:
+        specifier: ^6.10.3
+        version: 6.15.9
     devDependencies:
       next:
         specifier: ^15.0.0
@@ -7099,7 +7100,13 @@ snapshots:
       - encoding
       - supports-color
 
-  '@aws-amplify/adapter-nextjs@1.6.12(aws-amplify@6.15.9)(next@16.0.10(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))':
+  '@aws-amplify/adapter-nextjs@1.6.12(aws-amplify@6.15.9)(next@15.5.9(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))':
+    dependencies:
+      aws-amplify: 6.15.9
+      aws-jwt-verify: 4.0.1
+      next: 15.5.9(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+
+  '@aws-amplify/adapter-nextjs@1.6.12(aws-amplify@6.15.9)(next@16.0.10(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))':
     dependencies:
       aws-amplify: 6.15.9
       aws-jwt-verify: 4.0.1

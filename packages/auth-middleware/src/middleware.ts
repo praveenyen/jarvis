@@ -4,13 +4,13 @@ import { isPrivateRoute } from './route-utils';
 export interface MiddlewareConfig {
   privateRoutes?: string[];
   loginRedirectPath?: string;
-  authCheckFn: () => Promise<boolean>;
+  checkAuthFn: () => Promise<boolean>;
 }
 
 export function createAuthMiddleware(config: MiddlewareConfig) {
   const privateRoutes = config.privateRoutes || [];
   const loginPath = config.loginRedirectPath || '/login';
-  const authCheckFn = config.authCheckFn;
+  const { checkAuthFn } = config;
 
   return async function middleware(request: NextRequest): Promise<NextResponse> {
     const response = NextResponse.next();
@@ -29,7 +29,7 @@ export function createAuthMiddleware(config: MiddlewareConfig) {
     }
 
     // Perform authentication check for protected routes
-    const authenticated = await authCheckFn();
+    const authenticated = await checkAuthFn();
 
     if (!authenticated) {
       const loginUrl = new URL(loginPath, request.url);
