@@ -6,17 +6,6 @@
         "fallback": "jarvis-marketing.vercel.app"
       }
     },
-    "jarvis-docs": {
-      "development": {
-        "local": 3001
-      },
-      "routing": [
-        {
-          "group": "docs",
-          "paths": ["/docs", "/docs/:path*"]
-        }
-      ]
-    },
     "jarvis-unsecured": {
       "routing": [
         {

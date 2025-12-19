@@ -7,17 +7,6 @@
         "fallback": "microfrontends-marketing.labs.vercel.dev"
       }
     },
-    "jarvis-docs": {
-      "development": {
-        "local": 3001
-      },
-      "routing": [
-        {
-          "group": "docs",
-          "paths": ["/docs", "/docs/:path*"]
-        }
-      ]
-    },
     "jarvis-unsecured": {
       "development": {
         "local": 3002
