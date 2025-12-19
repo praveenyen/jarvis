@@ -1,13 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/microfrontends.json",
   "applications": {
-    "microfrontends-marketing": {
+    "jarvis-marketing": {
       "development": {
         "local": 3000,
         "fallback": "microfrontends-marketing.labs.vercel.dev"
       }
     },
-    "microfrontends-docs": {
+    "jarvis-docs": {
       "development": {
         "local": 3001
       },
@@ -18,7 +18,7 @@
         }
       ]
     },
-    "microfrontends-unsecured": {
+    "jarvis-unsecured": {
       "development": {
         "local": 3002
       },
