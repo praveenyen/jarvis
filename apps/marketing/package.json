@@ -7,7 +7,7 @@
     "dev": "next dev --turbo --port $(microfrontends port)",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "start": "next start",
+    "start": "next start --port $(microfrontends port)",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
