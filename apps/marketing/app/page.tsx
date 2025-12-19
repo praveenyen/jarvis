@@ -28,9 +28,9 @@ export default function Home() {
               <li>
                 <Link
                   className="text-gray-600 hover:text-gray-900"
-                  href="#features"
+                  href="/loans"
                 >
-                  Features
+                  Loans
                 </Link>
               </li>
               <li>
