@@ -14,7 +14,7 @@
       "routing": [
         {
           "group": "unsecured",
-          "paths": ["/unsecured", "/unsecured/:path*", "/dashboard/:path*"]
+          "paths": ["/unsecured", "/unsecured/:path*", "/dashboard/:path*", "/loans", "/loans/:path*"]
         }
       ]
     }
