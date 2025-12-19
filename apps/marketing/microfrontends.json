@@ -28,17 +28,6 @@
           "paths": ["/unsecured", "/unsecured/:path*"]
         }
       ]
-    },
-    "microfrontends-apollo": {
-      "development": {
-        "local": 3003
-      },
-      "routing": [
-        {
-          "group": "apollo",
-          "paths": ["/apollo", "/apollo/:path*"]
-        }
-      ]
     }
   }
 }
